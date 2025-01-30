@@ -1,0 +1,2 @@
+for i in range(2, 11):  # Loop from 2 to 10
+    print(f"1/{i} = {1/i:.6f}")  # Print fraction and its decimal equivalent with 6 decimal places
