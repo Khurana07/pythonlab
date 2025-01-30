@@ -1,0 +1,6 @@
+# Define a sequence of denominators
+denominators = range(2, 11)  
+
+# Loop over the sequence and print decimal equivalents
+for d in denominators:
+    print(f"1/{d} = {1/d:.6f}")  # Formatting to 6 decimal places
