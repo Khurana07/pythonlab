@@ -1,0 +1,33 @@
+def count_characters_in_file(filename):
+    char_count = {}
+
+    try:
+        with open(filename, 'r', encoding='utf-8') as file:
+            content = file.read()
+
+            for char in content:
+                if char in char_count:
+                    char_count[char] += 1
+                else:
+                    char_count[char] = 1
+
+        return char_count
+
+    except FileNotFoundError:
+        print(f"File '{filename}' not found.")
+        return {}
+
+# Example usage
+filename = input("Enter the filename (e.g., 'program.c' or 'notes.txt'): ")
+result = count_characters_in_file(filename)
+
+# Display the character frequency
+if result:
+    print("\nCharacter Frequency:")
+    for char, freq in sorted(result.items()):
+        if char == '\n':
+            print("'\\n' (newline):", freq)
+        elif char == ' ':
+            print("' ' (space):", freq)
+        else:
+            print(f"'{char}': {freq}")
